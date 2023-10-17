@@ -1,13 +1,13 @@
 # Outsourcing WEB
-외주 서비스 웹페이지
+프렌차이즈 소개 페이지
 
 ## todo
-
-- [ ] slack api message
-- [ ] SEO
-- [ ] DB 연동
-- [ ] animation effect
-- [ ] 페이지내 이동링크
+- contact form
+- font
+- font size
+- mobile
+- 전화번호 안내
+- 로고 크기 조정
 
 ## spec
 

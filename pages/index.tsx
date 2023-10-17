@@ -7,6 +7,8 @@ import Partners from "../components/ui/main/Partners";
 import Portfolio from "../components/ui/main/Portfolio";
 import Service from "../components/ui/main/Service";
 import Target from "../components/ui/main/Target";
+import System from "../components/ui/main/System";
+import Benefit from "../components/ui/main/Benefit";
 
 // TODO: add favicon
 export default function HomePage(props: any) {
@@ -24,19 +26,16 @@ export default function HomePage(props: any) {
 	return (
 		<Fragment>
 			<Head>
-				<title>윌러스 | 파트너스</title>
+				<title>형님짬뽕</title>
 				<meta
 					name="description"
-					content="국내외 유수 기업부터 스타트업까지, 다양한 백그라운드의 마케팅, 브랜딩, 제품기획가가 함께 합니다"
+					content="신선한 원료와 알려지지 않은 레시피, 소자본으로도 창업할 수 있는 프렌차이즈의 새 시대를 열다."
 				/>
 			</Head>
 			<Hero />
-			<Target />
-			<Partners />
-			<How />
-			<Service />
 			<Portfolio />
-			<Contact />
+			<System />
+			<Benefit />
 		</Fragment>
 	);
 }

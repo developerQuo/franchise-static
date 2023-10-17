@@ -4,41 +4,51 @@ import Image from "next/image";
 
 function Header() {
 	return (
-		<header className="navbar fixed z-10 h-[100px] justify-between bg-transparent bg-opacity-90 px-4 lg:container">
-			<div className="navbar-start pl-[24px] lg:pl-[32px]">
+		<header className="navbar fixed z-10 h-[100px] justify-between border-b-2 border-primary bg-white lg:container lg:p-0">
+			<div className="navbar-start">
 				<div className="hidden lg:block">
 					<Link
 						href="/"
-						className="flex items-baseline gap-x-3 text-2xl font-bold"
+						className="relative flex items-baseline gap-x-3 text-2xl font-bold"
 					>
 						<Image
-							src="/images/logo/wiillus_logo.svg"
-							alt="Logo"
-							width={101}
+							src="/images/logo/logo_text_black.png"
+							alt="LogoText"
+							width={111}
 							height={30}
-						/>{" "}
-						<div className="text-text-secondary">|</div>
-						<div>Coworking</div>
+						/>
+						<Image
+							src="/images/logo/logo_black.png"
+							alt="Logo"
+							width={111}
+							height={30}
+							className="absolute left-16"
+						/>
 					</Link>
 				</div>
 				<div className="block lg:hidden">
 					<Link
 						href="/"
-						className="flex items-baseline gap-x-3 text-base font-bold"
+						className="relative flex items-baseline gap-x-3 text-base font-bold"
 					>
 						<Image
-							src="/images/logo/wiillus_logo.svg"
+							src="/images/logo/logo_text_black.png"
+							alt="LogoText"
+							width={60.5}
+							height={15}
+						/>
+						<Image
+							src="/images/logo/logo_black.png"
 							alt="Logo"
 							width={60.5}
 							height={15}
-						/>{" "}
-						<div className="text-text-secondary">|</div>
-						<div>Coworking</div>
+							className="absolute left-8"
+						/>
 					</Link>
 				</div>
 			</div>
 			<div className="navbar-end">
-				<div className="hidden lg:block">
+				{/* <div className="hidden lg:block">
 					<Navigation />
 				</div>
 				<div className="dropdown-end dropdown lg:hidden">
@@ -59,7 +69,17 @@ function Header() {
 						</svg>
 					</label>
 					<Navigation />
-				</div>
+				</div> */}
+			</div>
+			<div className="flex h-full w-56 items-center justify-center bg-primary">
+				<Image
+					src="/images/call.png"
+					alt="Call"
+					width={45}
+					height={30}
+					style={{ color: "#000000", borderColor: "#000000" }}
+				/>
+				<span className="text-2xl font-bold text-white">1588-8282</span>
 			</div>
 		</header>
 	);

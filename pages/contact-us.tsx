@@ -7,8 +7,8 @@ export default function ContactUsPage() {
 	return (
 		<Fragment>
 			<Head>
-				<title>Wiillus | Contact us</title>
-				<meta name="description" content="윌러스 문의하기" />
+				<title>형님짬뽕 | Contact us</title>
+				<meta name="description" content="형님짬뽕 문의하기" />
 			</Head>
 			<Hero />
 			<Contact />
