@@ -5,9 +5,9 @@ import Image from "next/image";
 function Header() {
 	return (
 		<header className="navbar fixed z-10 h-[100px] justify-between overflow-hidden border-b-2 border-primary bg-white lg:container lg:p-0">
-			<div className="navbar-start">
-				<div className="relative hidden lg:block">
-					<Link href="/" className="">
+			<div className="navbar-start h-full">
+				<div className="relative hidden h-full w-full lg:block">
+					<Link href="/" className="absolute -bottom-8">
 						<Image
 							src="/images/logo/logo_text_black.png"
 							alt="LogoText"
@@ -23,23 +23,20 @@ function Header() {
 						/>
 					</Link>
 				</div>
-				<div className="block lg:hidden">
-					<Link
-						href="/"
-						className="relative flex items-baseline gap-x-3 text-base font-bold"
-					>
+				<div className="relative block h-full w-full lg:hidden">
+					<Link href="/" className="absolute -bottom-8">
 						<Image
 							src="/images/logo/logo_text_black.png"
 							alt="LogoText"
-							width={60.5}
-							height={15}
+							width={240}
+							height={30}
 						/>
 						<Image
 							src="/images/logo/logo_black.png"
 							alt="Logo"
-							width={60.5}
-							height={15}
-							className="absolute left-8"
+							width={111}
+							height={30}
+							className="absolute top-1/3 right-[-2rem] -translate-y-1/3"
 						/>
 					</Link>
 				</div>
@@ -68,15 +65,14 @@ function Header() {
 					<Navigation />
 				</div> */}
 			</div>
-			<div className="flex h-full w-56 items-center justify-center bg-primary">
+			<div className="flex h-full w-80 items-center justify-center gap-x-2 bg-primary">
 				<Image
-					src="/images/call.png"
-					alt="Call"
 					width={45}
-					height={30}
-					style={{ color: "#000000", borderColor: "#000000" }}
+					height={45}
+					src="https://img.icons8.com/ios-filled/100/phone-disconnected.png"
+					alt="phone-disconnected"
 				/>
-				<span className="text-2xl font-bold text-white">1588-8282</span>
+				<span className="text-2xl font-bold text-white">031-332-0888</span>
 			</div>
 		</header>
 	);
