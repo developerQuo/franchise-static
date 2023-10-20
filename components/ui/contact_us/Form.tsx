@@ -80,7 +80,7 @@ export default function Form() {
 						<input
 							type="text"
 							placeholder="이름"
-							className="input-bordered input w-full focus:border-secondary focus:text-secondary"
+							className="input-bordered input w-full"
 							{...register("name", { required: true })}
 						/>
 						{errors.name?.type === "required" && (
@@ -93,7 +93,7 @@ export default function Form() {
 						<input
 							type="text"
 							placeholder="연락처"
-							className="input-bordered input w-full focus:border-secondary focus:text-secondary"
+							className="input-bordered input w-full"
 							{...register("phone", { required: true })}
 						/>
 						{errors.phone?.type === "required" && (
@@ -106,7 +106,7 @@ export default function Form() {
 						<input
 							type="text"
 							placeholder="창업 희망 지역"
-							className="input-bordered input w-full focus:border-secondary focus:text-secondary"
+							className="input-bordered input w-full"
 							{...register("region", { required: true })}
 						/>
 						{errors.region?.type === "required" && (
@@ -119,7 +119,7 @@ export default function Form() {
 						<input
 							type="text"
 							placeholder="창업 예정일"
-							className="input-bordered input w-full focus:border-secondary focus:text-secondary"
+							className="input-bordered input w-full"
 							{...register("date", { required: true })}
 						/>
 						{errors.date?.type === "required" && (
