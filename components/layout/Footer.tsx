@@ -23,7 +23,9 @@ function Footer() {
 				</div>
 				<div className="flex flex-col gap-y-2.5">
 					<p>
-						<span>주식회사 형님짬뽕 | 대표 송인규 | ingyu225@naver.com</span>
+						<span>
+							주식회사 형님짬뽕 | 대표 송인규 | {"joyoung0228@naver.com"}
+						</span>
 					</p>
 					<p>
 						<span>

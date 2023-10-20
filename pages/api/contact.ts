@@ -16,7 +16,7 @@ export default async function handler(
 				data as unknown as IForm;
 
 			const result = await sendEmail({
-				to: process.env.CONTACT_ENV || "joyoung0228@naver.com",
+				to: process.env.CONTACT_EMAIL || "joyoung0228@naver.com",
 				subject: SUBJECT,
 				html: render(Template(emailProps)),
 			});
