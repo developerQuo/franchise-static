@@ -11,7 +11,7 @@ export default async function handler(
 		if (req.method === "POST" && database_id) {
 			const data = req.body;
 
-			const { company, name, phone, email, contactType, description } =
+			const { name, phone, region, date, privacyPolicy, marketingPolicy } =
 				data as unknown as IForm;
 
 			const notion = new Client({
@@ -43,7 +43,7 @@ export default async function handler(
 						],
 					},
 					phone: {
-						phone_number: phone
+						phone_number: phone,
 					},
 					email: {
 						email,

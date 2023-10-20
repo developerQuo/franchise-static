@@ -4,17 +4,14 @@ import Image from "next/image";
 
 function Header() {
 	return (
-		<header className="navbar fixed z-10 h-[100px] justify-between border-b-2 border-primary bg-white lg:container lg:p-0">
+		<header className="navbar fixed z-10 h-[100px] justify-between overflow-hidden border-b-2 border-primary bg-white lg:container lg:p-0">
 			<div className="navbar-start">
-				<div className="hidden lg:block">
-					<Link
-						href="/"
-						className="relative flex items-baseline gap-x-3 text-2xl font-bold"
-					>
+				<div className="relative hidden lg:block">
+					<Link href="/" className="">
 						<Image
 							src="/images/logo/logo_text_black.png"
 							alt="LogoText"
-							width={111}
+							width={240}
 							height={30}
 						/>
 						<Image
@@ -22,7 +19,7 @@ function Header() {
 							alt="Logo"
 							width={111}
 							height={30}
-							className="absolute left-16"
+							className="absolute top-1/3 right-[-2rem] -translate-y-1/3"
 						/>
 					</Link>
 				</div>

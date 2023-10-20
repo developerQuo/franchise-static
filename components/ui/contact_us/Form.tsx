@@ -5,18 +5,19 @@ import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import NotificationContext from "../../../store/notification-context";
 import Button from "../Button";
-import { contactOptions } from "../options";
 import { ApiResponseType, ContactType } from "../types";
+import PrivacyPolicyModal from "./PrivacyPolicyModal";
+import MarketingPolicyModal from "./MarketingPolicyModal";
 
 const TITLE = "문의하기";
 
 export interface IForm {
-	company: string;
 	name: string;
 	phone: string;
-	email: string;
-	contactType: ContactType;
-	description?: string;
+	region: string;
+	date: Date;
+	privacyPolicy: boolean;
+	marketingPolicy: boolean;
 }
 
 export default function Form() {
@@ -70,98 +71,106 @@ export default function Form() {
 
 	return (
 		<form
-			className="form-control gap-y-8 px-[24px] md:gap-y-[92px] lg:px-0"
+			className="flex gap-x-6 px-[24px] md:gap-y-[92px]"
 			onSubmit={handleSubmit(onSubmit)}
 		>
-			<div className="form-control w-full items-start gap-4 text-[18px]">
-				<label className="required text-base font-bold text-text-primary">
-					기본 정보
-				</label>
-				<input
-					type="text"
-					placeholder="회사명"
-					className="input-bordered input w-full focus:border-secondary focus:text-secondary"
-					{...register("company", { required: true })}
-				/>
-				{errors.company?.type === "required" && (
-					<p role="alert" className="text-error">
-						회사명을 입력하세요.
-					</p>
-				)}
-				<input
-					type="text"
-					placeholder="담당자명"
-					className="input-bordered input w-full focus:border-secondary focus:text-secondary"
-					{...register("name", { required: true })}
-				/>
-				{errors.name?.type === "required" && (
-					<p role="alert" className="text-error">
-						담당자명을 입력하세요.
-					</p>
-				)}
-				<input
-					type="text"
-					placeholder="전화번호"
-					className="input-bordered input w-full focus:border-secondary focus:text-secondary"
-					{...register("phone", { required: true })}
-				/>
-				{errors.phone?.type === "required" && (
-					<p role="alert" className="text-error">
-						전화번호를 입력하세요.
-					</p>
-				)}
-				<input
-					type="email"
-					placeholder="이메일"
-					className="input-bordered input w-full focus:border-secondary focus:text-secondary"
-					{...register("email", { required: true })}
-				/>
-				{errors.email?.type === "required" && (
-					<p role="alert" className="text-error">
-						이메일을 입력하세요.
-					</p>
-				)}
-			</div>
-			<div className="form-control w-full items-start gap-4 text-[18px]">
-				<label className="required text-base font-bold text-text-primary">
-					문의유형
-				</label>
-				<div className="grid grid-cols-1 gap-x-10 gap-y-4 lg:grid-cols-3">
-					{contactOptions?.map(({ label, ...rest }) => (
-						<div key={rest.value}>
-							<label className="flex cursor-pointer gap-x-2">
+			<div className="flex flex-col">
+				<div className="flex items-center gap-x-4">
+					<div>
+						<input
+							type="text"
+							placeholder="이름"
+							className="input-bordered input w-full focus:border-secondary focus:text-secondary"
+							{...register("name", { required: true })}
+						/>
+						{errors.name?.type === "required" && (
+							<p role="alert" className="text-error">
+								이름을 입력하세요.
+							</p>
+						)}
+					</div>
+					<div>
+						<input
+							type="text"
+							placeholder="연락처"
+							className="input-bordered input w-full focus:border-secondary focus:text-secondary"
+							{...register("phone", { required: true })}
+						/>
+						{errors.phone?.type === "required" && (
+							<p role="alert" className="text-error">
+								연락처를 입력하세요.
+							</p>
+						)}
+					</div>
+					<div>
+						<input
+							type="text"
+							placeholder="창업 희망 지역"
+							className="input-bordered input w-full focus:border-secondary focus:text-secondary"
+							{...register("region", { required: true })}
+						/>
+						{errors.region?.type === "required" && (
+							<p role="alert" className="text-error">
+								창업 희망 지역을 입력하세요.
+							</p>
+						)}
+					</div>
+					<div>
+						<input
+							type="text"
+							placeholder="창업 예정일"
+							className="input-bordered input w-full focus:border-secondary focus:text-secondary"
+							{...register("date", { required: true })}
+						/>
+						{errors.date?.type === "required" && (
+							<p role="alert" className="text-error">
+								창업 예정일을 입력하세요.
+							</p>
+						)}
+					</div>
+				</div>
+				<div className="flex items-center gap-x-4 ">
+					<div className="form-control">
+						<div className="flex items-center">
+							<label className="label cursor-pointer gap-x-3">
 								<input
-									type="radio"
-									className="radio checked:bg-secondary"
-									{...rest}
-									{...register("contactType", {
-										required: "문의유형을 선택하세요.",
-									})}
+									type="checkbox"
+									className="checkbox-primary checkbox"
+									{...register("privacyPolicy", { required: true })}
 								/>
-								<span className="text-base">{label}</span>
+								<span className="label-text text-white">
+									개인정보 취급방침 동의
+								</span>
 							</label>
+							<PrivacyPolicyModal />
 						</div>
-					))}
+						{errors.privacyPolicy?.type === "required" && (
+							<p role="alert" className="text-error">
+								개인정보 취급방침에 동의해주세요.
+							</p>
+						)}
+					</div>
+					<div className="form-control">
+						<div className="flex items-center">
+							<label className="label cursor-pointer gap-x-3">
+								<input
+									type="checkbox"
+									className="checkbox-primary checkbox"
+									{...register("marketingPolicy", { required: true })}
+								/>
+								<span className="label-text text-white">마케팅 활용 동의</span>
+							</label>
+							<MarketingPolicyModal />
+						</div>
+						{errors.marketingPolicy?.type === "required" && (
+							<p role="alert" className="text-error">
+								마케팅 활용 방침에 동의해주세요.
+							</p>
+						)}
+					</div>
 				</div>
-				{errors.contactType?.type === "required" && (
-					<p role="alert" className="text-error">
-						{errors.contactType.message}
-					</p>
-				)}
 			</div>
-			<div className="form-control w-full">
-				<div className="flex flex-col items-start gap-4">
-					<label className="text-base font-bold text-text-primary">
-						문의 내용
-					</label>
-					<textarea
-						className="textarea-bordered textarea h-[200px] w-full focus:border-secondary focus:text-secondary"
-						placeholder="문의 내용을 입력해주세요. (선택)"
-						{...register("description")}
-					/>
-				</div>
-			</div>
-			<Button className="btn-primary">문의하기</Button>
+			<Button className="btn-primary w-24">문의하기</Button>
 		</form>
 	);
 }

@@ -1,6 +1,6 @@
 export default function Portfolio() {
 	return (
-		<div className="relative flex flex-col items-center justify-center bg-[url('/images/main/success_story.png')] bg-contain bg-bottom bg-no-repeat text-center lg:h-[720px] lg:justify-start lg:pt-[120px]"></div>
+		<div className="relative flex flex-col items-center justify-center bg-[url('/images/main/success_story.png')] bg-contain bg-bottom bg-no-repeat text-center lg:h-[720px] lg:justify-start"></div>
 	);
 }
 

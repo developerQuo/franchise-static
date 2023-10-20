@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { Fragment, useEffect, useState } from "react";
-import Contact from "../components/ui/main/Contact";
+import Contact from "../components/ui/contact_us/Contact";
 import Hero from "../components/ui/main/Hero";
 import How from "../components/ui/main/How";
 import Partners from "../components/ui/main/Partners";
@@ -36,6 +36,7 @@ export default function HomePage(props: any) {
 			<Portfolio />
 			<System />
 			<Benefit />
+			<Contact />
 		</Fragment>
 	);
 }
