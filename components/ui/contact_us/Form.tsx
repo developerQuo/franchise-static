@@ -15,7 +15,7 @@ export interface IForm {
 	name: string;
 	phone: string;
 	region: string;
-	date: Date;
+	date: string;
 	privacyPolicy: boolean;
 	marketingPolicy: boolean;
 }
